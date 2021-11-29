@@ -23,13 +23,16 @@ function myReduce(collection, callback, acc = 0) {
   let array = Object.values(collection)
   for (let i = 0; i < array.length; i++) {
     if (acc === 0) {
-      console.log('acc within ===: ' + acc)
-      acc = (callback(array, array[i]))
-      let num = parseInt(acc)
-      console.log('num is: ' + num)
-      console.log('acc after ===: ' + acc)
+      acc = array[0]
+      const newArray = array.slice(1)
+      acc = (callback(acc, newArray[i], newArray))
+      return acc
+      // let num = parseInt(acc)
+      // console.log('num is: ' + num)
+      // console.log('acc after ===: ' + acc)
     } else if (acc !== 0) {
       acc = (callback(acc, array[i], array))
+      return acc
     }
   }
     console.log(acc)
@@ -96,19 +99,19 @@ function myLast(array, n = 0) {
 
 //I NEED HELP!!!
 function myKeys (object) {
-  const keys = object.map(function(keys){
-    return keys.value
-  })
+  // const keys = object.map(function(keys){
+  //   return keys.value
+  // })
   console.log(keys)
-//   let array = []
-//   console.log('Yo yo yo')
-//   object.keys.forEach(element => console.log(element))
-//   // for (const keys of object.keys) {
-//   //   console.log('HEYO')
-//   //   array.push(keys)
-//   //   console.log('array after the push: ' + array)
-//   // }
-// console.log(array)
-// return array
+  let array = []
+  console.log('Yo yo yo')
+  object.keys.forEach(element => console.log(element))
+  // for (const keys of object.keys) {
+  //   console.log('HEYO')
+  //   array.push(keys)
+  //   console.log('array after the push: ' + array)
+  // }
+console.log(array)
+return array
 }
 
