@@ -91,17 +91,24 @@ function myLast(array, n = 0) {
   }
 }
 
+
+
+
 //I NEED HELP!!!
 function myKeys (object) {
-  let array = []
-  console.log('Yo yo yo')
-  object.keys.forEach(element => console.log(element))
-  // for (const keys of object.keys) {
-  //   console.log('HEYO')
-  //   array.push(keys)
-  //   console.log('array after the push: ' + array)
-  // }
-console.log(array)
-return array
+  const keys = object.map(function(keys){
+    return keys.value
+  })
+  console.log(keys)
+//   let array = []
+//   console.log('Yo yo yo')
+//   object.keys.forEach(element => console.log(element))
+//   // for (const keys of object.keys) {
+//   //   console.log('HEYO')
+//   //   array.push(keys)
+//   //   console.log('array after the push: ' + array)
+//   // }
+// console.log(array)
+// return array
 }
 
