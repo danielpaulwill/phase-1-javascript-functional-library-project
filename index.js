@@ -16,33 +16,18 @@ function myMap(collection, callback) {
   return myArray
 }
 
-
-
-
 function myReduce(collection, callback, acc = 0) {
   let array = Object.values(collection)
   for (let i = 0; i < array.length; i++) {
     if (acc === 0) {
       acc = array[0]
       const newArray = array.slice(1)
-      acc = (callback(acc, newArray[i], newArray))
-      return acc
-      // let num = parseInt(acc)
-      // console.log('num is: ' + num)
-      // console.log('acc after ===: ' + acc)
     } else if (acc !== 0) {
       acc = (callback(acc, array[i], array))
-      return acc
     }
   }
-    console.log(acc)
     return acc
   }
-
-
-
-
-
 
 function myFind(collection, predicate) {
   let array = Object.values(collection)
@@ -72,13 +57,10 @@ function mySize(collection) {
 }
 
 function myFirst(array, n = 0) {
-  // console.log('n input is: ' + n)
   if (n === 0) {
-    // console.log('array[0] is: ' + array[0])
     return array[0]
   } if (n !== 0)  {
     let newArray = array.slice(0, n)
-    // console.log('newArray is: ' + newArray)
     return newArray
   }
 }
@@ -94,24 +76,20 @@ function myLast(array, n = 0) {
   }
 }
 
-
-
-
-//I NEED HELP!!!
 function myKeys (object) {
-  // const keys = object.map(function(keys){
-  //   return keys.value
-  // })
-  console.log(keys)
   let array = []
-  console.log('Yo yo yo')
-  object.keys.forEach(element => console.log(element))
-  // for (const keys of object.keys) {
-  //   console.log('HEYO')
-  //   array.push(keys)
-  //   console.log('array after the push: ' + array)
-  // }
-console.log(array)
-return array
+  for (const property in object) {
+    array.push(property)
+  }
+  return array
 }
 
+
+
+function myValues (obj) {
+  let array = []
+  for (const element in obj){
+    array.push(obj[element])
+  }
+  return array
+}
